@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>p5.js example</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="./p5.min.js"></script>
+  <script src="./addons/p5.sound.js"></script>
+  <script src="sketch.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div id="top">
+            <b>Infinite Chant Generator</b>
+        </div>
+        <div id="sketch-holder"></div>
+        <div id="bottom">
+            Click to start!<br><br>
+            Attempting to replicate music from human composers with computers and algorithms is nothing new. 
+            From David Cope's pioneering Experiments in Musical Intelligence in the 1980s(!) to the recent proliferation of AI slop playlists on Youtube with virtually no human input involved,
+            many have tried to imprison the wild spark of creativity in a digital cage (to varying degrees of success). 
+            Here is my own experiment, generating melodic lines based on medieval chant.
+            <br><br>
+            Chant is a unique format in this context. The body of chant repertoire is very large and thus a lot of data is available to work with. 
+            On the other hand, chant is a sacred form and it was not intended to be an individualistic expression of creativity (though exceptions exist such as the works of Hildegard of Bingen). 
+            The centonization processes used to construct chants result in the presence of recurring motivic and cadential units shared across the repertoire, which you might be able to hear in my reconstruction.
+            <br><br>
+            I downloaded chants from GregoBase and converted the pitch material to a MIDI format using gabctk. I then sorted the chants into the 8 church modes.
+            Unfortunately, fine details in the score are lost in the processing as the chant is quantized into strict time units.
+            <br><br>
+            As for generating new material, I am not using any kind of modern "generative" AI/language model like ChatGPT. 
+            Instead, I used a much simpler algorithm: Markov chains are a stochastic process where the chance of a state (a group of notes in this case) occurring depends on the previous state. 
+            In simple terms, the analysis consists of just storing what notes can possibly come after the previous notes, and which ones happen more often. 
+            The program picks a random starting figure and just keeps guessing what comes next - but it is ultimately based on the real chant data. 
+            Certain patterns are more common in chant, such as small steps being more frequent than leaps.
+            <br><br>
+            Notes:
+            <br>
+            Every time you refresh the page, a different mode is loaded! See if you can figure out which color is which. 
+            <br>
+            Due to technical limitations the sound will not work properly if you switch to another tab or window.
+        </div>
+    </div>
+</body>
+
+</html>

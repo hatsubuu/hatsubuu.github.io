@@ -1,0 +1,27 @@
+html, body {    
+    height: 100%;
+}
+
+body {
+    background-color: #000000;
+    color: #ffffff;
+    font-family:sans-serif;
+    font-size:14px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.container div {   
+    padding: 8px;  
+    max-width: 1000px;
+}
+#top {
+    font-size:24px;
+}
+#sketch-holder {
+    text-align: center;
+}
